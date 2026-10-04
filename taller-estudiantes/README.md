@@ -55,7 +55,7 @@ En las misiones 1 y 2 trabajás sobre un circuito ya armado:
 
 ## Misión 1: El sensor de temperatura (I2C)
 
-**Enlace al circuito:** *(agregar enlace de Tinkercad)*
+**Enlace al circuito:** [Monitoreo de temperatura en Tinkercad](https://www.tinkercad.com/things/kzwUfOrm15J-tutorial-monitoreotemperatura?sharecode=Z5V_KeXMRNdRYW73awoHJ0VUQL0b_aChEBYX-uUyoL8)
 
 Este es el sistema de monitoreo del laboratorio, el mismo de la demostración. Tiene **cuatro dispositivos en un mismo bus I2C**:
 
@@ -113,7 +113,7 @@ Al encenderse el quinto LED, la pantalla muestra el **fragmento 1**. Anotalo.
 
 ## Misión 2: La cerradura (UART)
 
-**Enlace al circuito:** *(agregar enlace de Tinkercad)*
+**Enlace al circuito:** [Cerradura UART en Tinkercad](https://www.tinkercad.com/things/9p5PZjDOg6O-tutorial-la-cerradura-uart?sharecode=QP0IS_wcJ5oSPeA_5rUCfEBoJbjdjMOru3XohE7zV8Y)
 
 La cerradura tiene dos Arduino: el **Lector**, con un teclado, y la **Puerta**, con LEDs, un zumbador y una pantalla. El Lector le envía por **UART** el código tecleado, y la Puerta decide si abre. El circuito ya está armado; tu trabajo es **programarlo en 5 etapas**. En cada una pegás el código, lo probás y entendés qué hace.
 
