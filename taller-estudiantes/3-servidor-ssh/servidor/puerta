@@ -1,0 +1,88 @@
+#!/usr/bin/env bash
+# Control remoto de la puerta del laboratorio.
+#   puerta estado  -> muestra si esta abierta o cerrada
+#   puerta abrir   -> abre la puerta y genera el acta de recuperacion
+
+ESTADO="$HOME/.estado_puerta"
+ACTA="$HOME/acta_recuperacion.txt"
+
+case "$1" in
+  estado)
+    if [ -f "$ESTADO" ]; then
+      echo "Puerta del laboratorio: ABIERTA"
+    else
+      echo "Puerta del laboratorio: BLOQUEADA"
+    fi
+    ;;
+
+  abrir)
+    if [ -f "$ESTADO" ]; then
+      echo "La puerta ya esta abierta. El acta esta en: $ACTA"
+      exit 0
+    fi
+    echo "Enviando orden de apertura a la cerradura..."
+    sleep 1
+    echo "Desactivando modo seguro..."
+    sleep 1
+    cat <<'EOF'
+
+      +---------+          +---------+
+      |  #####  |          |       / |
+      |  #   #  |   --->   |      /  |
+      |  #####  |          |     /   |
+      |    o    |          |    o    |
+      +---------+          +---------+
+       BLOQUEADA             ABIERTA
+
+EOF
+    touch "$ESTADO"
+    CODIGO="$(cat /opt/lab/codigo)"
+    FECHA="$(date '+%Y-%m-%d %H:%M')"
+    cat > "$ACTA" <<EOF
+=======================================================
+          ACTA DE RECUPERACION DEL LABORATORIO
+=======================================================
+Fecha: $FECHA
+Codigo de finalizacion: $CODIGO
+
+Que paso:
+  Un corte de electricidad reinicio el sistema en modo
+  seguro. La puerta se bloqueo y la contrasena del
+  servidor quedo dividida en dos fragmentos.
+
+Como se recupero:
+  1. I2C: el sensor revelo el fragmento 1 al llegar a 30 C.
+  2. UART: se programo el lector y la cerradura, y la
+     cerradura revelo el fragmento 2.
+  3. SSH: se construyo el servidor, se entro con los dos
+     fragmentos, se revisaron los registros y se abrio
+     la puerta a distancia.
+
+-------------------------------------------------------
+Un ultimo mensaje de Andrea:
+
+  "Lo lograron porque le hablaron a cada dispositivo en
+   su protocolo: I2C al sensor, UART a la cerradura y SSH
+   al servidor. Si uno solo fallaba, la puerta seguia
+   cerrada.
+
+   Y recuerden: ningun protocolo es mas seguro que quien
+   lo usa.
+     - Cambien siempre las contrasenas de fabrica.
+     - Verifiquen la huella del servidor la primera vez.
+     - Nunca ignoren la advertencia de huella cambiada.
+     - Usen llaves en vez de contrasenas, y nunca
+       compartan la llave privada.
+     - Copien archivos por canales cifrados (scp, sftp)."
+=======================================================
+EOF
+    echo "Puerta ABIERTA."
+    echo "Se genero el acta de recuperacion: $ACTA"
+    echo "Ahora descargala a tu computadora con scp (ver la guia)."
+    ;;
+
+  *)
+    echo "Uso: puerta estado | puerta abrir"
+    exit 1
+    ;;
+esac

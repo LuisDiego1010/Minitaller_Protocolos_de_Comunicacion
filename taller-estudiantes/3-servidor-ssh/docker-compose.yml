@@ -1,0 +1,8 @@
+# El servidor del laboratorio: una maquina Linux con SSH
+# que Docker crea dentro de tu computadora.
+services:
+  servidor:
+    build: ./servidor          # Se construye con el Dockerfile de esa carpeta
+    hostname: servidor-lab     # Nombre de la maquina
+    ports:
+      - "127.0.0.1:2222:22"    # Tu puerto 2222 -> puerto 22 (SSH) del servidor
