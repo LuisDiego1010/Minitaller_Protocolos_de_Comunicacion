@@ -19,7 +19,7 @@ Minitaller_Protocolos_de_Comunicacion/
 ├── demostracion/
 │   └── README.md
 ├── presentacion/
-│   └── Presentacion.pdf
+│   └── Presentación.pdf
 ├── taller-estudiantes/
 │   ├── README.md 
 │   ├── 1-sensor-i2c/
@@ -92,7 +92,7 @@ Y seguí directamente la guía paso a paso en [`taller-estudiantes/README.md`](t
 
 ## Recursos adicionales
 
-- Presentación: [`Garcia_Protocolos_Presentacion.pdf`](presentacion/Garcia_Protocolos_Presentacion.pdf)
+- Presentación: [`protocolos_presentación.pdf`](presentacion/protocolos_presentación.pdf)
 - Demostración: [`demostracion/README.md`](demostracion/README.md)
 - Circuito de la misión 1 en Tinkercad: [Monitoreo de temperatura](https://www.tinkercad.com/things/4u4fEo53Gir-tutorial-monitoreotemperatura?sharecode=hO4WPVOret15NkqS5hze6cnsi79mzYAGFILFfxE1k_k)
 - Circuito de la misión 2 en Tinkercad: [Cerradura UART](https://www.tinkercad.com/things/9p5PZjDOg6O-tutorial-la-cerradura-uart?sharecode=QP0IS_wcJ5oSPeA_5rUCfEBoJbjdjMOru3XohE7zV8Y)
