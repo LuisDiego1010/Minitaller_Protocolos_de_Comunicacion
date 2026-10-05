@@ -15,22 +15,21 @@ El repositorio separa el material del expositor del material de los estudiantes,
 
 ```
 Minitaller_Protocolos_de_Comunicacion/
-├── README.md                          <- Vista general del taller y dinámica.
-├── demostracion/                      <- Material de demostración del expositor.
-│   └── README.md                      <- Circuito, código y guion de la demostración.
+├── img/
+├── demostracion/
+│   └── README.md
 ├── presentacion/
-│   └── Garcia_Protocolos_Presentacion.pdf <- Presentación de la sesión.
-├── taller-estudiantes/                <- Material del tutorial guiado para estudiantes.
-│   ├── README.md                      <- Guía completa del taller.
-│   ├── 1-sensor-i2c/                  <- Misión 1: sensor de temperatura con I2C.
-│   ├── 2-cerradura-uart/              <- Misión 2: cerradura con UART.
-│   │   └── etapas/                    <- Código de la cerradura, por etapas.
-│   └── 3-servidor-ssh/                <- Misión 3: servidor SSH con Docker.
+│   └── Presentacion.pdf
+├── taller-estudiantes/
+│   ├── README.md 
+│   ├── 1-sensor-i2c/
+│   ├── 2-cerradura-uart/
+│   │   └── etapas/
+│   └── 3-servidor-ssh/
+│       ├── README.md
 │       ├── docker-compose.yml
 │       └── servidor/
-├── img/                               <- Imágenes y recursos visuales del taller.
-├── .gitignore                         <- Archivos que Git no debe versionar.
-└── .gitattributes                     <- Mantiene los scripts con finales de línea de Linux.
+├── README.md
 ```
 
 ## Dinámica del taller
