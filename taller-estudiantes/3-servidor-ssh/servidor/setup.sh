@@ -5,7 +5,7 @@ set -e
 # 1. El usuario tecnico. Su contrasena no esta escrita aqui:
 #    solo guardamos su HASH, igual que Linux en /etc/shadow.
 useradd -m -s /bin/bash tecnico
-echo 'tecnico:$6$Lab5841sal$vuDXQIQbTc9q2DQ3K62XTs/yMkAXf4NCdiY1oWosm2eYMEXoYCPcC0QU2Nftt0MBp2PZqkfwp4nwu22fedtlP1' | chpasswd -e
+echo 'tecnico:$6$Lab5841sal$Df6WX5eNb683kZPSytWz/xGeI4ntGsbZECyfR4wAou1Ugv4AwwQ98dbuPmnmFCSB4efugQeB2USXrEknUdNK90' | chpasswd -e
 
 # 2. Un codigo de finalizacion al azar, distinto en cada computadora
 mkdir -p /opt/lab

@@ -10,6 +10,8 @@
 
 El **Lector** tiene un teclado y le envía por UART el código tecleado a la **Puerta**, que tiene LEDs, un zumbador y una pantalla. El circuito ya está armado; vos lo programás en 5 etapas. En cada una, **reemplazás** el código de una placa por el de la etapa.
 
+> **El código de la cerradura es `1958`.** Andrea lo eligió porque es el año en que Jack Kilby, en Texas Instruments, demostró el primer circuito integrado: el antepasado de cada chip que usás en este taller, desde el Arduino hasta la pantalla.
+
 ![Circuito de la cerradura](../../img/circuito-uart.png)
 
 Antes de empezar, fijate en dos detalles del cableado: los cables de UART van **cruzados** (el TX del Lector, pin ~11, va al RX de la Puerta, pin ~10, y viceversa), y las dos placas comparten **GND**.
@@ -259,7 +261,7 @@ const long BAUD_UART = 1200;
 const char CODIGO_CORRECTO[] = "1958";
 
 // El fragmento 2 guardado como codigos ASCII (cada byte es una letra)
-const byte FRAGMENTO_2[] = {0x74, 0x52, 0x39, 0x21, 0x77, 0x5A, 0x33, 0x65};
+const byte FRAGMENTO_2[] = {0x74, 0x52, 0x39, 0x77};
 
 const byte PIN_LED_VERDE = 6;    // Puerta abierta
 const byte PIN_LED_ROJO  = 7;    // Puerta cerrada

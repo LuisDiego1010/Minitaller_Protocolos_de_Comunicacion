@@ -62,7 +62,7 @@ Completaste el tutorial si obtuviste los dos fragmentos, entraste al servidor, a
 
 1. El **código de finalización** del acta.
 2. Una **captura** del acta abierta en tu computadora.
-3. **Una respuesta breve:** ¿por qué SSH te preguntó por la huella la primera vez, y qué podría significar que cambie en el futuro?
+3. **Una respuesta breve:** La primera vez que te conectaste, SSH te mostró la huella del servidor y te pidió escribir yes. ¿Para qué sirve guardar esa huella, y qué debería hacer un técnico si algún día SSH le avisa que cambió?
 
 ## Referencias
 

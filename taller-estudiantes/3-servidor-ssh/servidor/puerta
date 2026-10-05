@@ -51,7 +51,7 @@ Que paso:
   servidor quedo dividida en dos fragmentos.
 
 Como se recupero:
-  1. I2C: el sensor revelo el fragmento 1 al llegar a 30 C.
+  1. I2C: el sensor revelo el fragmento 1 al llegar a 57 C.
   2. UART: se programo el lector y la cerradura, y la
      cerradura revelo el fragmento 2.
   3. SSH: se construyo el servidor, se entro con los dos

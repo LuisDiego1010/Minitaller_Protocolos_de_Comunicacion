@@ -7,7 +7,8 @@ RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends openssh-server \
  && rm -rf /var/lib/apt/lists/* \
  && mkdir -p /run/sshd \
- && sed -i 's/^session.*pam_motd.so/#&/' /etc/pam.d/sshd
+ && sed -i 's/^session.*pam_motd.so/#&/' /etc/pam.d/sshd \
+ && sed -i 's/^session\s*required\s*pam_loginuid.so/session optional pam_loginuid.so/' /etc/pam.d/sshd
 
 # Copiamos nuestros archivos al servidor
 COPY sshd_lab.conf /etc/ssh/sshd_config.d/lab.conf
