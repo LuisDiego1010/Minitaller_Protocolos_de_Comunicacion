@@ -51,7 +51,7 @@ Todos estos sistemas necesitan lo mismo: alguien que **mida**, alguien que **coo
 4. **El esclavo 2 muestra.** Vuelve a armar el número, lo muestra en la pantalla y enciende los LEDs como un termómetro de barra: uno más cada 4 °C.
 
 <p align="center">
-  <img src="../img/demo-umbrales.png" alt="Umbrales de temperatura y barra de LEDs" width="90%">
+  <img src="../img/umbrales_leds.png" alt="Umbrales de temperatura y barra de LEDs" width="90%">
 </p>
 
 | Temperatura | LEDs encendidos |
