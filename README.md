@@ -17,19 +17,21 @@ El repositorio separa el material del expositor del material de los estudiantes,
 Minitaller_Protocolos_de_Comunicacion/
 ├── img/
 ├── demostracion/
-│   └── README.md
+│   ├── README.md
+│   ├── maestro/
+│   ├── esclavo1_sensor/
+│   └── esclavo2_lcd_leds/
 ├── presentacion/
-│   └── Presentación.pdf
+│   └── Garcia_Protocolos_Presentacion.pdf
 ├── taller-estudiantes/
-│   ├── README.md 
+│   ├── README.md
 │   ├── 1-sensor-i2c/
 │   ├── 2-cerradura-uart/
-│   │   └── etapas/
 │   └── 3-servidor-ssh/
 │       ├── README.md
 │       ├── docker-compose.yml
 │       └── servidor/
-├── README.md
+└── README.md
 ```
 
 ## Dinámica del taller
@@ -38,7 +40,7 @@ Minitaller_Protocolos_de_Comunicacion/
 |---|---|---|
 | Rompehielos: Gartic Phone | 15 min | Un "teléfono descompuesto" con dibujos: un mensaje pasa por toda la clase y llega deformado. Plantea el problema que resuelven los protocolos. |
 | Presentación | 25 min | Modelo OSI, protocolos de bajo nivel, transición a la red y protocolos de alto nivel, con espacio para preguntas. |
-| Demostración | 15 min | El monitoreo de temperatura por I2C, en vivo, como introducción al tutorial (ver [`demostracion/`](demostracion/)). |
+| Demostración | 15 min | El monitoreo de temperatura por I2C, en hardware real, como introducción al tutorial (ver [`demostracion/`](demostracion/)). |
 | Tutorial guiado | 30–45 min | Las tres misiones del laboratorio cerrado (ver [`taller-estudiantes/`](taller-estudiantes/)). |
 | Cierre: Kahoot | 7–8 min | Seis casos prácticos: elegir el protocolo más adecuado para cada situación. |
 
@@ -50,9 +52,9 @@ Al final se muestran las cadenas y se cierra con la idea: la comunicación funci
 
 ### 2. Demostración (`demostracion/`)
 
-Se muestra un sistema de monitoreo de temperatura con cuatro dispositivos en un mismo bus I2C: tres Arduino y una pantalla LCD, simulados en Tinkercad. Se ve en vivo el direccionamiento, la confirmación con ACK y las resistencias pull-up. Al superar los 30 °C, suena una alarma, como en un sistema real de monitoreo.
+Se muestra un sistema de monitoreo de temperatura con cuatro dispositivos en un mismo bus I2C: tres Arduino y una pantalla LCD, armados en una protoboard. Se ve en vivo el direccionamiento, la confirmación con ACK y cómo el maestro detecta cuando un dispositivo deja de responder. Al calentar el sensor, la barra de LEDs se llena de a uno.
 
-**El circuito, el código y el guion de la demostración están en [`demostracion/README.md`](demostracion/README.md).**
+**El circuito, el código y los pasos para armarla están en [`demostracion/README.md`](demostracion/README.md).**
 
 ### 3. Tutorial guiado (`taller-estudiantes/`)
 
@@ -62,7 +64,7 @@ Se muestra un sistema de monitoreo de temperatura con cuatro dispositivos en un 
 |---|---|---|---|---|
 | 1 | I2C | Tinkercad | Usar el sensor de temperatura ya armado | Fragmento 1 |
 | 2 | UART | Tinkercad | Programar la cerradura paso a paso, en 5 etapas | Fragmento 2 |
-| 3 | SSH | Docker | Construir el servidor archivo por archivo y entrar con los dos fragmentos | Puerta abierta y acta |
+| 3 | SSH | Docker | Encender el servidor y entrar con los dos fragmentos | Puerta abierta y acta |
 
 **La guía completa, con todos los pasos, el código y las explicaciones, está en [`taller-estudiantes/README.md`](taller-estudiantes/README.md).**
 
@@ -92,7 +94,7 @@ Y seguí directamente la guía paso a paso en [`taller-estudiantes/README.md`](t
 
 ## Recursos adicionales
 
-- Presentación: [`protocolos_presentación.pdf`](presentacion/protocolos_presentación.pdf)
-- Demostración: [`demostracion/README.md`](demostracion/README.md)
+- Presentación: [`Garcia_Protocolos_Presentacion.pdf`](presentacion/Garcia_Protocolos_Presentacion.pdf)
+- Demostración en hardware: [`demostracion/README.md`](demostracion/README.md)
 - Circuito de la misión 1 en Tinkercad: [Monitoreo de temperatura](https://www.tinkercad.com/things/4u4fEo53Gir-tutorial-monitoreotemperatura?sharecode=hO4WPVOret15NkqS5hze6cnsi79mzYAGFILFfxE1k_k)
 - Circuito de la misión 2 en Tinkercad: [Cerradura UART](https://www.tinkercad.com/things/9p5PZjDOg6O-tutorial-la-cerradura-uart?sharecode=QP0IS_wcJ5oSPeA_5rUCfEBoJbjdjMOru3XohE7zV8Y)
